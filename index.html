@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+        body {
+            background-image: url("img.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+	h1{
+		margin-top:10%;
+		color:white;
+
+	}
+	#N
+	{
+		
+
+	}
+		
+	</style>
+	<title>Invictus project for word count</title>
+</head>
+   
+<body>
+	
+	<center>
+		<h1><b>Enter the number</b><h1>
+		<input type="number" name="number" id="N" placeholder="Enter the number to get top repeated words">
+		<input type="button" name="btn" id="btn" value="Submit" onclick="TheCount()">
+
+		<div id="result"></div>
+</center>
+</body>
+
+<script>
+	var txt;
+	var counts = {};
+	var keys = [];
+function TheCount()
+ {
+	var txt = loadStrings('givenText.txt');
+    
+	var n= document.getElementById("N").value;
+
+
+	var allwords = txt.join("\n");
+		var tokens = allwords.split(/\W+/);
+		console.log(tokens);
+		
+	for (var i = 0; i < tokens.length; i++) 
+	{
+			var word = tokens[i].toLowerCase();
+			if (!/\d-," "+/.test(word)) {
+				if (counts[word] == undefined) 
+				{
+					counts[words] = 1;
+					keys.push(word);
+				} 
+				else 
+				{
+					counts[word] = count[word] + 1;
+				}
+			}
+			keys.sort(compare);
+			function compare(a, b) {
+				var countA = counts[a];
+				var countB = counts[b];
+				return countB - countA;
+            }
+			for (var i = 0; i < num; i++) {
+				
+				document.getElementById("result").innerHTML ="the top N values that repeat in this text file are "+createDiv(keys+" "+counts[num]);
+            }
+		noCanvas();
+    }
+	
+	
+</script>
+</html>
